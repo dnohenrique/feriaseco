@@ -1,0 +1,16 @@
+<div class="payment-message" *ngIf="isDeclinedPayment">
+    <div class="payment-message-title">
+        <i class="icon-alerta"></i> O pagamento da sua mensalidade de {{month}} de {{year}} foi recusado :/
+    </div>
+
+    <div class="payment-message-body">
+        <b>Evite o cancelamento da sua conta. Mantenha em dia o pagamento de suas mensalidades.</b><br>
+
+        <div class="payment-message-tip"><b>Dicas:</b></div>
+        1. Verifique o limite de seu cartão de crédito. É possível liberar o limite pagando fatura atual ou parte
+        dela.<br>
+        2. Se o seu cartão de crédito estiver vencido, <a (click)="goToNewCard()">cadastre um novo cartão.</a><br>
+        3. Se não identificar o problema, entre em contato com a operadora do seu cartão de crédito.<br>
+        4. Se tiver alguma dúvida entre em contato pela <a (click)="goToSupport()">Central de Ajuda.</a>
+    </div>
+</div>

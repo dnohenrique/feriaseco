@@ -1,0 +1,250 @@
+@import "../../shared/assets/colors.scss";
+
+.content-grid {
+  display: grid;
+  grid-template-columns: calc(100% - 281px) 272px;
+  grid-template-rows: 100%;
+  width: 100%;
+
+  &.aereo {
+    grid-template-columns: calc(100% - 272px) 272px;
+  }
+}
+
+.content-message {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  background: $color_fundo;
+  padding-top: 0;
+  padding-bottom: 30px;
+}
+
+.col-message {
+  float: left;
+  width: 100%;
+  padding-right: 30px;
+}
+
+.msg-header {
+  float: left;
+  width: 100%;
+  min-height: 212.3px;
+  position: relative;
+  background: url("https://static.ferias.co/images/fundo-parabens.jpg") no-repeat;
+  background-size: 100% 100%;
+  border-radius: 5px;
+}
+
+.msg-header.processing {
+  background: url("https://static.ferias.co/images/fundo_processamento.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.msg-title {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: #ffffff;
+  position: relative;
+  top: 74px;
+  left: 0;
+}
+
+.msg-subtitle {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  color: #ffffff;
+  position: relative;
+  bottom: -65px;
+  left: 0;
+}
+
+.msg-content {
+  float: left;
+  width: 100%;
+  padding-bottom: 60px;
+  border: solid 1px $pedra_clara;
+  background-color: #ffffff;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.msg-img-sino {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140.9px;
+  height: 95.8px;
+  background: url("https://static.ferias.co/images/hotel_sino.png") no-repeat;
+  background-size: 100% 100%;
+  margin-top: 259px;
+}
+
+.msg-img-aereo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 241.4px;
+  height: 175.3px;
+  background: url("../../../assets/images/boarding-pass.png") no-repeat;
+  background-size: 100% 100%;
+  margin-top: 259px;
+}
+
+.msg-img-aereo.processing,
+.msg-img-sino.processing {
+  background-image: url("https://static.ferias.co/images/ampulheta.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 73.7px;
+  height: 125.8px;
+}
+
+.msg-info {
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 57px;
+}
+
+.msg-info.processing {
+  width: 79%;
+}
+
+.msg-text-one {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+}
+
+.msg-reservation {
+  font-size: 16px;
+  color: $mergulho;
+  cursor: pointer;
+}
+
+.msg-text-two {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  margin: 10px 0 40px 0px;
+}
+
+.msg-text-tree {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  color: $mergulho;
+  margin-bottom: 10px;
+}
+
+.msg-text-four {
+  float: left;
+  width: 100%;
+  color: $mergulho;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.col-product {
+  float: right;
+  width: 100%;
+}
+
+/* Mobile */
+@media only screen and (max-width: 906px) {
+  .content-grid {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+
+  .portal-message,
+  .content-message {
+    background-color: white;
+  }
+
+  .col-product,
+  .col-message {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .msg-header {
+    border-radius: 0;
+    min-height: 144px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .msg-img-sino {
+    margin-top: 160px;
+    width: 114.9px;
+    height: 78.1px;
+  }
+
+  .msg-img-sino.processing {
+    width: 58px;
+    height: 95px;
+  }
+
+  .msg-title {
+    display: block;
+    top: 28px;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  .msg-subtitle {
+    display: block;
+    top: 28px;
+    bottom: auto;
+    font-size: 16px;
+  }
+
+  .msg-info {
+    width: 96%;
+  }
+
+  .msg-content {
+    border: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 60px;
+    border-bottom: 1px dashed $mergulho;
+  }
+
+  .col-message {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+  }
+}
+
+// Adaptação do IE
+@media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+  .content-grid {
+    display: block;
+  }
+
+  .col-message {
+    width: 76.2%;
+  }
+
+  .col-product {
+    width: 272px;
+    float: left;
+  }
+}

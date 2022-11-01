@@ -1,0 +1,174 @@
+@import "../../assets/styles/colors";
+
+app-root {
+  width: 100%;
+}
+
+.email {
+  cursor: pointer;
+}
+
+.message-covid19 {
+  background-color: $horizonte;
+  color: #000000;
+}
+
+.message-confirmar-email {
+  background-color: $horizonte;
+  color: #000000;
+}
+
+.message-payment-declined {
+  background-color: $ceu_de_pipa;
+  color: #ffffff;
+}
+
+.fc-alert {
+  position: relative;
+  margin: auto;
+
+  div {
+    max-width: calc(100% - 30px);
+  }
+
+  .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+
+
+.content-message {
+  font-family: Roboto;
+  width: 100%;
+  overflow: auto;
+
+  &.display-none {
+    display: none;
+  }
+
+  &.display-block {
+    display: block;
+  }
+
+  .message {
+    position: relative;
+    max-width: 1245px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+    .text-alert {
+      position: relative;
+      max-width: 1000px;
+      width: Calc(100% - 50px);
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+      padding: 24px 0;
+
+      &.display-none {
+        display: none;
+      }
+
+      &.display-block {
+        display: block;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.29;
+      }
+
+      .text {
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 1.29;
+      }
+    }
+
+    .btn-alert {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      width: 15px;
+
+      .btn-close {
+        width: 15.5px;
+
+        i {
+          cursor: pointer;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.payment-declined-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.loading {
+  width: 162px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  position: relative;
+  margin: auto;
+}
+
+.text-loading {
+  float: left;
+  width: 100%;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  text-align: center;
+  color: #00b0b0;
+  position: relative;
+}
+
+.background_gray {
+  background-color: #fcfcfc;
+}
+
+.content_body {
+  min-height: calc(100% - 450px);
+}
+
+@media (max-width: 1150px) {
+  .content-message {
+    .message {
+      .text-alert {
+        max-width: 700px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content_body {
+    min-height: calc(100% - 150px);
+  }
+
+  .content-message {
+    .message {
+      text-align: left;
+
+      .text-alert {
+        max-width: 600px;
+        padding: 20px;
+      }
+    }
+  }
+}

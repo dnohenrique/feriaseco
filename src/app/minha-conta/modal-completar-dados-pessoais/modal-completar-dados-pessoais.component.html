@@ -1,0 +1,23 @@
+<div id="modal-shadow" class="modal-shadow" [style.display]="visibilityModal ? 'block' : 'none'">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="close" (click)="fecharModal()"><img src='https://static.ferias.co/images/icons/fechar.png'></div>
+        </div>
+
+        <div class="modal-body" id="modal-body-quality">
+            <div class="modal-text">
+                <p>
+                    <img class="modal-img" src='https://static.ferias.co/images/dados-pessoais.png'>
+                    <strong>Falta pouco para completar seus dados pessoais.</strong> <br>
+                    Eles nos ajudam a melhorar sua experiência.
+                </p>
+                <div class="buttons">
+                    <button id="btn-voltar" class="fc-btn fc-btn-light-danger" [disabled]="disableButtonSubmit"
+                    (click)="goHome()">Mais tarde</button>
+                    <button id="btn-confirmar" class="fc-btn fc-btn-success" [disabled]="disableButtonSubmit"
+                    (click)="goSubmit()">Vou completar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

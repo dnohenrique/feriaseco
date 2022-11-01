@@ -1,0 +1,50 @@
+<section class="answers" *ngIf="!loading">
+  <div *ngFor="let answer of answers; let indx = index;">
+
+    <button type="button" class="collapsible" [ngClass]="answer.collapsed ? 'collapsed' : ''"
+      (click)="answer.collapsed = !answer.collapsed" [attr.aria-expanded]="answer.collapsed"
+      aria-controls="collapseBasic" id="collapse-option-{{ indx }}"><span>{{ answer.question }}</span>
+      <div class="arrow-icon"></div>
+    </button>
+    <div id="collapseBasic" [collapse]="!answer.collapsed" [isAnimated]="true">
+      <div class="well well-lg card card-block card-header">
+        <div class="description">
+          <img src="assets/images/headset-outline.png" class="headset-icon" alt="headset icon">
+          <p>{{ answer.answer }}</p>
+        </div>
+        <div class="suggested-answer-feedback">
+          <p><b>Sua dúvida foi respondida?</b></p>
+          <div class="form-field form-field-radio">
+            <label class="fc-input-radio">
+              <input type="radio" name="userDocumentType" (click)="answerFeedbackClick('true')" [value]="1">
+              <span class="fc-checkradio"></span> Sim
+            </label>
+            <label class="fc-input-radio">
+              <input type="radio" name="userDocumentType" (click)="answerFeedbackClick('false')" [value]="2">
+              <span class="fc-checkradio"></span> Não
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="fc-alert fc-alert-danger" *ngIf="requestFailed">
+  <span class="fc-alert-icon">:(</span><b>Tivemos um problema.</b> Por favor, tente novamente mais tarde.
+</div>
+
+<!-- GHOST SECTION -->
+<section class="answers" *ngIf="loading">
+  <div class="loading-information">
+
+    <button type="button" class="collapsible">&nbsp;
+    </button>
+    <button type="button" class="collapsible">&nbsp;
+    </button>
+
+  </div>
+
+</section>

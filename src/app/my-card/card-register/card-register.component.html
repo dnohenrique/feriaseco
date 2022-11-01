@@ -1,0 +1,21 @@
+<div class="content_max">
+    <div class="fc-container">
+        <h1>Meus cartões</h1>
+        <div class="fc-content-card">
+            <h3>Novo cartão</h3>
+
+            <!-- Alerta de erro cartão -->
+            <div class="row-fc fc-alert fc-alert-danger" [hidden]="!msgErrorCard">
+                <b class="face">:(</b> <b>Cartão não permitido.</b> {{msgErrorCard}}
+            </div>
+            <fc-formulario-pagamento-card-register [submit]="submitCardRegister" (errorEvent)="error($event)"
+                [isLoading]="true" (formSubmitResult)="cardRegisterFeedback($event)" [isDataRegister]="false"
+                [name]="name" [email]="email">
+            </fc-formulario-pagamento-card-register>
+        </div>
+        <div class="content-button">
+            <button class="fc-btn fc-btn-lg fc-btn-success" (click)="submitButtonClick()">Cadastrar cartão</button>
+            <button class="fc-btn fc-btn-lg fc-btn-light" (click)="back()">Voltar</button>
+        </div>
+    </div>
+</div>

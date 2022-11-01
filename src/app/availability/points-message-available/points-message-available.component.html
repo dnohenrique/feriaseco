@@ -1,0 +1,25 @@
+<div id="modal-points" class="modal-header">
+    <span class="close" (click)="hideModal()">&times;</span>
+</div>
+<div class="modal-body">
+    <div class="icon">
+        <div class="icon-img">
+            <hr class="icon-trace-one">
+            <hr class="icon-trace-two">
+            <hr class="icon-trace-three">
+            <span>P</span>
+        </div>
+        <div class="icon-text">
+            <span *ngIf="points.amount === 1">Você ganhou {{points.amount}} ponto!</span>
+            <span *ngIf="points.amount > 1">Você ganhou {{points.amount}} pontos!</span>
+        </div>
+        <div class="description-text">
+            <span *ngIf="points.amount === 1">Seu ponto já esta disponível para usar como quiser.</span>
+            <span *ngIf="points.amount > 1">Seus pontos já estão disponíveis para usar como quiser.</span>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="fc-btn fc-btn-light" (click)="hideModal()">Fechar</button>
+    <button class="fc-btn fc-btn-success" (click)="goToMyPlan()">Ir para Meu Plano</button>
+</div>

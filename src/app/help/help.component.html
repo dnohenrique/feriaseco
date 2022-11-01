@@ -1,0 +1,87 @@
+<div class="fc-container page-name show-on-mobile">
+  <h1>Central de ajuda</h1>
+</div>
+<div class="banner">
+  <div class="fc-container page-name show-on-desktop">
+    <div class="banner-position">
+      <p class="banner-text banner-text-question">
+        Surgiu um imprevisto?
+      </p>
+      <p class="banner-text banner-text-info">
+        Selecione uma das opções abaixo para te ajudarmos
+      </p>
+    </div>
+  </div>
+</div>
+<div class="fc-container page-name show-on-desktop">
+  <h1>Central de ajuda</h1>
+</div>
+<div class="fc-container" [class.loading-information]="loading">
+  <div class="content">
+    <h2>Tem alguma dúvida? A gente te ajuda :)</h2>
+    <div class="section-subjects">
+      <p>Assuntos</p>
+      <div id="ghost-buttons" *ngIf="loading">
+        <button class="fc-btn">&nbsp;</button>
+        <button class="fc-btn">&nbsp;</button>
+        <button class="fc-btn">&nbsp;</button>
+        <button class="fc-btn">&nbsp;</button>
+      </div>
+      <button class="fc-btn" [ngClass]="subject.active ? 'fc-btn-dark' : 'fc-btn-secondary'"
+        *ngFor="let subject of subjects" id="subject-{{ subject.id }}"
+        (click)="changeSelectedSubject(subject.id)">{{ subject.title }}</button>
+    </div>
+
+    <div class="form-group">
+      <div class="form-field find-word">
+        <input type="text" class="input-field" (keyup)="onChangeInputKeyword($event)" [(ngModel)]="inputKeywords"
+          placeholder="Buscar palavra-chave" id="keyword-search-input">
+        <button class="find-button" (click)="onChangeInputKeyword({ code: 'Enter' })"
+          id="keyword-search-button"></button>
+      </div>
+    </div>
+
+    <p class="keyword" *ngIf="searchKeywords.length > 0">"{{ searchKeywords }}"</p>
+
+    <div class="answer-section">
+      <app-answers [subject]="selectedSubject" [searchKeywords]="searchKeywords"
+        (answerFeedback)="answerFeedback($event)"></app-answers>
+    </div>
+    <div class="fc-alert fc-alert-success" *ngIf="answersFeedbackHelp === 'true'">
+      <i class="icon-check"></i><b>Que ótimo!</b> Estamos sempre aqui para lhe ajudar. ;D
+    </div>
+
+  </div>
+</div>
+
+<div class="fc-container contact-box">
+
+  <section class="contact" id="contact">
+    <h2>Não encontrou o que procurava?</h2>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="option align-right">
+          <img src="assets/images/whatsapp-outline.png" alt="chat icon">
+          <br />
+          <button id="chat-button" class="fc-btn fc-btn-success fc-btn-lg disabled" style="margin-top:-5px"
+            (click)="btnOpenChat()" id="btn-access-chat">Mande um Whatsapp</button>
+          <p class="business-hours">{{ whatsapp }}</p>
+          <p class="tooltip-space">(Horário comercial - Não aceita ligações)
+            <span class="tooltiptext">De segunda a sexta das 9h às 17:30h<br />(Exceto
+              feriados)</span>
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="option align-left">
+          <img src="assets/images/message-outline.png" alt="chat icon">
+          <br />
+          <button id="message-button" (click)="btnRedirectToMessage()" id="btn-send-message"
+            class="fc-btn fc-btn-success fc-btn-lg">Envie uma
+            mensagem</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

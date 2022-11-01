@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import "./assets/styles/colors";
+@import "./assets/styles/container";
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Angular Perfect Scrollbar */
+.ps__rail-y {
+  opacity: 1 !important;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+::after,
+::before,
+.fc-checkradio,
+.container-ckeck,
+.icon-img,
+.checkmark {
+  box-sizing: initial !important;
+}
+
+.icon-img {
+  box-sizing: unset !important;
+  line-height: initial !important;
+}
+
+:focus {
+  outline: none !important;
+}
+
+html,
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+  background-color: #fcfcfc !important;
+  height: 100%;
+}
+
+.content_max {
+  margin: 0;
+  background: $color_fundo;
+  position: relative;
+}
+
+.content_width {
+  top: 0;
+  margin: auto;
+  //min-width: 950px;
+  min-width: 320px;
+  max-width: 1240px;
+  //
+  // background: red;
+  //
+  overflow-x: hidden;
+}
+
+.content_component {
+  // background: green;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .content_width {
+    max-width: 500px;
+  }
+}
+
+@media print {
+  app-root {
+    display: none;
+  }
+
+  body {
+    padding-right: 0 !important;
+    height: max-content;
+  }
+
+  @media (min-width: 0\0) {
+    body {
+      height: 150%;
+    }
+  }
+}

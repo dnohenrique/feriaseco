@@ -1,0 +1,116 @@
+<div class="content_max" id="navbar-section">
+  <div class="fc-container">
+    <div class="content_component">
+
+      <nav [style.display]="enableSideBar ? 'none' : 'block'">
+        <a [routerLink]="[ '' ]" class="navbar-content-ini">
+          <img id="logo" src="assets/images/feriasco_logo.svg">
+        </a>
+
+        <div id="nav-options" class="nav-options">
+          <div class="option-nav-brand" [style.top]="logoSuaMarca ? '-50px' : '0px'"
+            [style.display]="logoSuaMarca ? 'inline-block' : 'none'">
+            <span class="logo_company_label">Oferecido por</span>
+            <img id="logo-sua-marca" class="logo_company">
+          </div>
+          <div class="option-nav" id="id-como-funciona-nav" [style.top]="logoSuaMarca ? '-25px' : '0px'"
+            (click)="closeMenu();">
+            <b>Olá {{userFirstName}},</b> vamos viajar?
+          </div>
+          <div class="option-nav" id="id-planos-nav" [style.top]="logoSuaMarca ? '-25px' : '0px'">
+            <img id="menu-hamburger-navbar" class="menu_hamburger_navbar" src="assets/icons/menu.svg"
+              (click)="openCloseMenu();">
+
+          </div>
+        </div>
+
+      </nav>
+      <!-- 
+      <div (click)="openCloseMenu();" id="menu-hamburger-sidebar" class="menu_hamburger_sidebar">
+        <i class="icon-menu"></i>
+      </div> -->
+
+      <img id="menu-hamburger-sidebar" class="menu_hamburger_sidebar menu-desktop" src="assets/icons/menu.svg"
+        (click)="openCloseMenu();">
+
+      <div class="menu-mobile">
+        <img id="menu-hamburger-sidebar" src="assets/icons/menu_mobile.svg" (click)="openCloseMenu();">
+      </div>
+
+      <aside id="sidebar" class="sidebar" [style.display]="openSideBar ? 'block' : 'none'">
+
+        <img id="menu-hamburger-sidebar" class="menu_hamburger_sidebar" src="assets/icons/menu.svg"
+          (click)="openCloseMenu();">
+
+        <div id="menu-options" class="menu-options">
+
+          <div class="option" id="id-home" [routerLink]="['/home']" (click)="closeMenu();">
+            <span class="option-description">
+              Home
+            </span>
+          </div>
+          <!-- <div class="option" id="id-quem-somos-sidebar" [routerLink]="['/minha-conta']" (click)="closeMenu();">
+        <span class="option-description">
+          Minha conta
+        </span>
+      </div> -->
+          <div class="option" id="id-meu-plano-sidebar" [routerLink]="['/meu-plano']" (click)="closeMenu();">
+            <span class="option-description">
+              Meu plano
+            </span>
+          </div>
+          <div class="option" id="id-meu-plano-sidebar" [routerLink]="['/minha-conta']" (click)="closeMenu();">
+            <span class="option-description">
+              Minha conta
+            </span>
+          </div>
+          <div class="option" id="id-minhas-reservas-sidebar" [routerLink]="['/reservas/minhas-reservas']"
+            (click)="closeMenu();">
+            <span class="option-description">
+              Minhas reservas
+            </span>
+          </div>
+          <div class="option" id="id-meus-cartoes-sidebar" [routerLink]="['/meu-cartao']" (click)="closeMenu();">
+            <span class="option-description">
+              Meus Cartões
+            </span>
+          </div>
+          <div *ngIf="showMgm" class="option" id="id-indique-ganhe-sidebar" [routerLink]="['/indique-ganhe']"
+            (click)="closeMenu();">
+            <span class="option-description">
+              Indique e Ganhe
+            </span>
+          </div>
+          <div class="option" id="id-ajuda-sidebar" [routerLink]="['/ajuda']" (click)="closeMenu();">
+            <span class="option-description">
+              Ajuda
+            </span>
+          </div>
+          <div class="option" id="id-privacidade-sidebar" [routerLink]="['/politica-de-privacidade']"
+          (click)="closeMenu();">
+          <span class="option-description">
+            Política de Privacidade
+          </span>
+        </div>
+          <div class="option" id="id-termos-uso-sidebar" [routerLink]="['/termos-de-uso']" (click)="closeMenu();">
+            <span class="option-description">
+              Termos de uso
+            </span>
+          </div>
+          <div class="option" id="id-sair-sidebar" (click)="logout();">
+            <span class="option-description">
+              Sair
+            </span>
+          </div>
+          <div class="option-brand" id="id-sair-sidebar"
+            [style.display]="enableSideBar ? (logoSuaMarca ? 'block' : 'none') : 'none'">
+            <span class="logo_company_label">Oferecido por</span>
+            <img id="logo-sua-marca-sidebar" class="logo_company">
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+@import '../../shared/assets/colors';
+
+
+.fc-content-card {
+  background-color: white;
+  padding: 30px;
+  border: solid 1px #dcdcdc;
+  border-radius: 5px;
+}
+
+body {
+  background: #fcfcfc !important;
+}
+
+h1 {
+  color: $mergulho;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.content-button {
+  margin-top: 30px;
+  min-height: 70px;
+
+  .fc-btn-success {
+    float: right;
+  }
+
+  .fc-btn-light {
+    float: left;
+  }
+}
+
+.content_max {
+  min-height: max-content;
+  overflow: visible;
+  background-color: #fcfcfc;
+}
+
+.fc-container {
+  min-height: max-content;
+  margin-bottom: 0;
+}
+
+.row-fc {
+  margin-top: 20px;
+}
+
+.face {
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .content_max {
+    background-color: #ffffff;
+  }
+
+  h1 {
+    margin-top: 14px;
+    font-size: 25px;
+  }
+
+  .fc-content-card {
+    border: none;
+    padding: 0;
+  }
+
+
+}
+
+@media (max-width: 380px) {
+  .content-button {
+    min-height: 154px;
+
+    .fc-btn-success {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .fc-btn-light {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

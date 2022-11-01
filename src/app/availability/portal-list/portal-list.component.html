@@ -1,0 +1,13 @@
+<div class="content_max">
+    <div class="fc-container" *ngIf="productId == 1">
+        <fc-availability-list (errorEvent)="error($event)" [namePlan]="typePlan" (updateProduct)="updateProduct($event)"
+            [availableDays]="availableDays" [availablePointsFormat]="availablePointsFormat"
+            [availablePoints]="availablePoints"></fc-availability-list>
+    </div>
+    <div class="fc-container" *ngIf="productId == 2">
+        <fc-availability-air-list (errorEvent)="error($event)" [namePlan]="typePlan"
+            (updateProduct)="updateProduct($event)" [availableDays]="availableDays"
+            [availablePointsFormat]="availablePointsFormat" [availablePoints]="availablePoints">
+        </fc-availability-air-list>
+    </div>
+</div>

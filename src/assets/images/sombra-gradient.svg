@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200">
+    <defs>
+        <style>
+            .cls-1{opacity:.66;fill:url(#linear-gradient)}
+        </style>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1=".492" y2=".855" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#393e46" stop-opacity="0"/>
+            <stop offset="1" stop-color="#0b0c0e"/>
+        </linearGradient>
+    </defs>
+    <path id="shutterstock_1218310258" d="M0 0h360v200H0z" class="cls-1"/>
+</svg>

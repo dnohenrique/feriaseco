@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="239.745" height="145.582" viewBox="0 0 239.745 145.582">
+    <defs>
+        <style>
+            .cls-1{fill:#dcdcdc;stroke:#dcdcdc}.cls-2{fill:#00b0b0}.cls-3{fill:#fff}.cls-4{fill:#ce3a3c}.cls-5{fill:#6d0001}.cls-6{fill:#0082d8}
+        </style>
+    </defs>
+    <g id="map" transform="translate(-2.5 -7.5)">
+        <rect id="Retângulo_131" width="238.745" height="144.582" class="cls-1" data-name="Retângulo 131" rx="5" transform="translate(3 8)"/>
+        <path id="Caminho_406" d="M5 0h228.745c2.761 0 0 .556 0 3.317L189.343 79c0 2.761-27.239 46.033-30 46.033L79 66.724c-2.761 0-79-47.6-79-50.361V5a5 5 0 0 1 5-5z" class="cls-2" data-name="Caminho 406" transform="translate(3 8)"/>
+        <path id="Caminho_407" d="M202.968 144.582H44.883c-2.761 0 3.354-20.761 34.117-77.554 0-2.762 126.73 77.554 123.968 77.554z" class="cls-2" data-name="Caminho 407" transform="translate(3 8)"/>
+        <path id="Interseção_1" d="M-5520.118-422.42l-113.607-68.262-37.839 68.262h-20.581l42.981-77.539-68.836-41.36V-562c0-.1 0-.208.009-.312l161.055 96.773L-5500.693-567h16.438a4.983 4.983 0 0 1 3.4 1.336l-60.643 109.4 56.326 33.844z" class="cls-3" data-name="Interseção 1" transform="translate(5721 575.002)"/>
+        <path id="Caminho_399" d="M56.767 29.638c0 14.371-15.882 28.74-15.882 28.74S25 44.009 25 29.638A16.273 16.273 0 0 1 40.885 13a16.273 16.273 0 0 1 15.882 16.638z" class="cls-4" data-name="Caminho 399" transform="translate(81.488 31.055)"/>
+        <path id="Caminho_405" d="M8.076 0A8.076 8.076 0 1 1 0 8.076 8.076 8.076 0 0 1 8.076 0z" class="cls-5" data-name="Caminho 405" transform="translate(114.297 51.862)"/>
+        <path id="Subtração_3" d="M-5628.7-618.727a83.764 83.764 0 0 1-41.485-10.3 74.217 74.217 0 0 0-20.056-3.047 91.017 91.017 0 0 0-15.237 1.586c-3.262.531-6.636 1.08-10.457 1.461a58.468 58.468 0 0 1-7.707.523 49.922 49.922 0 0 1-23.044-5.486 52.5 52.5 0 0 1-13.993-10.505h179.706a38.505 38.505 0 0 1-7.889 10.272 55.73 55.73 0 0 1-10.879 7.96 62.188 62.188 0 0 1-12.064 5.256 46.3 46.3 0 0 1-11.447 2.159c-1.848.078-3.685.121-5.448.121z" class="cls-6" data-name="Subtração 3" transform="translate(5793 652.5)"/>
+    </g>
+</svg>

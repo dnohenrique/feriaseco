@@ -1,0 +1,209 @@
+@import "../../shared/assets/colors";
+
+.fc-container {
+  font-family: Roboto;
+  min-height: max-content;
+  padding-bottom: 30px;
+
+  .title-my-booking {
+    font-size: 30px;
+    font-weight: bold;
+    color: $mergulho;
+  }
+
+  .group-header {
+    width: 100%;
+    padding-top: 30px;
+    border-bottom: 1px solid #dcdcdc;
+
+    .fc-radio-header {
+      font-size: 25px;
+      padding: 10px 30px;
+      padding-bottom: 9px;
+      color: $pedra_do_mar;
+      cursor: pointer;
+      border-radius: unset;
+      -webkit-box-flex: unset !important;
+      flex: none !important;
+      margin-bottom: 0;
+
+      &.disabled {
+        cursor: not-allowed;
+        color: $pedra_clara;
+      }
+
+      i {
+        font-size: 16px;
+      }
+    }
+
+    .description {
+      &.mobile {
+        display: none;
+      }
+    }
+
+    .btn.focus,
+    .btn:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    .fc-radio-header.active {
+      color: $mergulho;
+      font-weight: bold;
+      border-bottom: 2px solid $mergulho;
+    }
+  }
+}
+
+::ng-deep {
+  @media (max-width: 768px) {
+    .content_max {
+      background: #fff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .fc-container {
+    max-width: 100%;
+    background: white;
+  }
+
+  .title-my-booking {
+    font-size: 20px !important;
+    padding-top: 30px;
+    padding-bottom: 22px;
+    border-bottom: 2px dashed $mergulho;
+  }
+
+  .group-header {
+    width: 20000px !important;
+    position: relative;
+    padding-top: 0 !important;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $pedra_do_mar;
+    overflow: hidden;
+    -webkit-transition: left 0.5s ease-out;
+    transition: left 0.5s ease-out;
+
+    .btn-box {
+      width: 50px;
+      height: 50px;
+      margin: 30px 12px 12px 12px;
+      padding: 9.6px 18.3px 9.6px 18px;
+      border-radius: 5px;
+      border: solid 1px $pedra_clara;
+      background-color: #ffffff;
+
+      &.room {
+      }
+
+      &.airplane {
+        left: -74px;
+        position: relative;
+      }
+
+      &.car {
+        position: relative;
+        left: -101px;
+      }
+
+      &.backpack {
+        position: relative;
+        left: -138px;
+      }
+
+      &.bus {
+        position: relative;
+        left: -206px;
+      }
+    }
+
+    .description {
+      position: relative;
+      top: 85px;
+      left: -75px;
+      font-size: 12px;
+      height: 23px;
+
+      &.mobile {
+        display: block !important;
+      }
+
+      &.room {
+      }
+
+      &.airplane {
+        position: relative;
+        left: -124px;
+      }
+
+      &.car {
+        position: relative;
+        left: -155px;
+        color: $pedra_clara;
+      }
+
+      &.backpack {
+        position: relative;
+        left: -208px;
+        color: $pedra_clara;
+      }
+
+      &.bus {
+        position: relative;
+        left: -261px;
+        color: $pedra_clara;
+      }
+
+      &.active {
+        border-bottom: 2px solid $mergulho;
+      }
+    }
+
+    .fc-radio-header {
+      border: none !important;
+
+      .icon-rooms {
+        position: relative;
+        top: -13px;
+        left: -34px;
+        font-size: 20px !important;
+      }
+
+      .icon-airplane-out {
+        position: relative;
+        top: -13px;
+        left: -39px;
+        font-size: 18px !important;
+      }
+
+      .icon-car-out {
+        position: relative;
+        top: -15px;
+        left: -41px;
+        font-size: 14px !important;
+      }
+
+      .icon-backpack-out {
+        position: relative;
+        top: -12px;
+        left: -34px;
+        font-size: 22px !important;
+      }
+
+      .icon-bus-out {
+        position: relative;
+        top: -14px;
+        left: -41px;
+        font-size: 16px !important;
+      }
+
+      .description {
+        display: none;
+      }
+    }
+  }
+}

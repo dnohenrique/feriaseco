@@ -1,0 +1,13 @@
+.fc-container {
+  min-height: max-content;
+  margin-bottom: 30px;
+}
+
+  /* Firefox */
+@-moz-document url-prefix() {
+  @media (max-width: 699px) {
+    .fc-container {
+       margin-bottom: 115px !important;
+    }
+  }
+}

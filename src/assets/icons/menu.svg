@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15">
+    <defs>
+        <style>
+            .cls-1{fill:#f9b508}
+        </style>
+    </defs>
+    <g id="menu">
+        <g id="Menu_1_">
+            <path id="Caminho_12" d="M30.875 98.68l17.555.005a1.223 1.223 0 0 0 0-2.445l-17.555-.005a1.223 1.223 0 1 0 0 2.445z" class="cls-1" data-name="Caminho 12" transform="translate(-29.653 -96.235)"/>
+            <path id="Caminho_13" d="M48.442 180.451l-17.533-.007a1.223 1.223 0 0 0 0 2.445l17.533.007a1.223 1.223 0 0 0 0-2.445z" class="cls-1" data-name="Caminho 13" transform="translate(-29.664 -174.171)"/>
+            <path id="Caminho_14" d="M154.038 264.667h-9.812a1.223 1.223 0 0 0 0 2.445h9.812a1.223 1.223 0 0 0 0-2.445z" class="cls-1" data-name="Caminho 14" transform="translate(-135.261 -252.112)"/>
+        </g>
+    </g>
+</svg>

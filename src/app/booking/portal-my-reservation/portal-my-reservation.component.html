@@ -1,0 +1,64 @@
+<div class="content_max">
+  <div class="fc-container">
+    <div class="title-my-booking">
+      Minhas Reservas
+    </div>
+
+    <div class="form-group header-type-destination">
+      <div class="btn-group group-header" [style.left]="positionProductLeft.toString()+'px'">
+        <div class="btn-box room">
+          <label class="btn fc-radio-header" [ngClass]="{'active': productId === 1}" tabindex="0" role="button"
+            (click)="changeProduct(1)">
+            <i class="icon-rooms"></i><span class="description"> Hospedagens</span>
+          </label>
+        </div>
+        <span class="description room mobile" [ngClass]="{'active': productId === 1}"
+          (click)="changeProduct(1)">Hospedagens</span>
+        <div class="btn-box airplane">
+          <label class="btn fc-radio-header" [ngClass]="{'active': productId === 2}" tabindex="1" role="button"
+            (click)="changeProduct(2)">
+            <i class="icon-airplane-out"></i><span class="description"> Voos</span>
+          </label>
+        </div>
+        <span class="description airplane mobile" [ngClass]="{'active': productId === 2}"
+          (click)="changeProduct(2)">Voos</span>
+        <!-- <div class="btn-box car">
+          <label class="btn fc-radio-header disabled" [ngClass]="{'active': productId === 3}" tabindex="2" role="button"
+            (click)="changeProduct(3)">
+            <i class="icon-car-out"></i><span class="description"> Carros</span>
+          </label>
+        </div>
+        <span class="description car mobile" [ngClass]="{'active': productId === 3}"
+          (click)="changeProduct(3)">&nbsp</span>
+        <div class="btn-box backpack">
+          <label class="btn fc-radio-header disabled" [ngClass]="{'active': productId === 4}" tabindex="3" role="button"
+            (click)="changeProduct(4)">
+            <i class="icon-backpack-out"></i><span class="description"> Experiências</span>
+          </label>
+        </div>
+        <span class="description backpack mobile" [ngClass]="{'active': productId === 4}"
+          (click)="changeProduct(4)">Experiências</span>
+        <div class="btn-box bus">
+          <label class="btn fc-radio-header disabled" [ngClass]="{'active': productId === 5}" tabindex="4" role="button"
+            (click)="changeProduct(5)">
+            <i class="icon-bus-out"></i><span class="description"> Ônibus</span>
+          </label>
+        </div>
+        <span class="description bus mobile" [ngClass]="{'active': productId === 5}"
+          (click)="changeProduct(5)">Ônibus</span> -->
+      </div>
+    </div>
+
+    <div class="content-reservation" *ngIf="productId === 1">
+      <fc-booking-my-reservation *ngIf="collaboratorLoading" [collaboratorName]="collaboratorName"
+        (errorEvent)="error($event)" >
+      </fc-booking-my-reservation>
+    </div>
+
+    <div class="content-reservation" *ngIf="productId === 2">
+      <fc-booking-air-my-reservation *ngIf="collaboratorLoading" [collaboratorName]="collaboratorName"
+        [collaboratorEmail]="collaboratorEmail" (errorEvent)="error($event)" >
+      </fc-booking-air-my-reservation>
+    </div>
+  </div>
+</div>

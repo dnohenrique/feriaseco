@@ -1,0 +1,451 @@
+@import '~src/assets/styles/colors';
+@import '~src/assets/styles/ghost';
+
+
+.loading-information {
+  &.input {
+    background-color: #f5f5f5;
+    border-bottom: 3px solid white;
+    border-radius: 4px 4px 4px 4px;
+    @include background-gradient;
+    @include animate-ghost-line;
+    width: 100%;
+    height: 40px;
+  }
+}
+
+
+.show-on-mobile {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.show-on-desktop {
+  display: block;
+}
+
+.fc-container {
+  .content {
+    border: solid 1px #dcdcdc;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+  }
+}
+
+.page-name {
+  padding-top: 45px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: $mergulho;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 45px;
+}
+
+.banner {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 218px;
+  background-position: center;
+  height: 477px;
+  background-image: url('~/assets/images/background-central-de-ajuda-4k.jpg');
+}
+
+.section-subjects {
+  margin-bottom: 15px;
+
+  p {
+    margin-bottom: 25px;
+  }
+
+  button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.find-word {
+  max-width: 545px;
+
+  .input-field {
+    position: relative;
+  }
+
+  .find-button {
+    background-image: url('~/assets/icons/zoom.png');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: right;
+    width: 27px;
+    height: 22px;
+    background-color: transparent;
+    border: unset;
+    position: relative;
+    bottom: 30px;
+    float: right;
+    right: 15px;
+  }
+}
+
+.keyword {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.contact {
+  text-align: center;
+  border: solid 1px #dcdcdc;
+  background-color: white;
+  margin-bottom: 90px;
+  padding: 30px 30px 0 30px;
+
+  .option {
+    margin-bottom: 30px;
+
+    &.align-right {
+      float: right;
+    }
+
+    &.align-left {
+      float: left;
+    }
+
+    button {
+      margin-top: -20px;
+      min-width: 220px;
+    }
+  }
+}
+
+.business-hours {
+  padding-top: 15px;
+}
+
+.dotted-hr {
+  hr {
+    display: block;
+    border-top: 2px dashed #dcdcdc;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.suggested-answer-feedback {
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  label {
+    margin-bottom: 0rem;
+  }
+}
+
+.banner-text-box {
+  height: 100%;
+}
+
+.banner-text {
+  position: absolute;
+  right: 0px;
+  margin: 0px;
+  background-color: #00b0b0;
+  padding: 5px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+.banner-text-question {
+  top: 320px;
+}
+
+.banner-text-info {
+  top: 365px;
+}
+
+.message-box {
+  padding-top: 30px;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.file {
+  position: relative;
+  overflow: hidden;
+  line-height: 26px;
+
+  .icon-file-csv {
+    position: absolute;
+  }
+
+  input {
+    width: 0px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .file-name-box {
+    border: solid 1px #dcdcdc;
+    border-radius: 5px 0 0 5px;
+    padding: 7px;
+    height: 40px;
+  }
+
+  .option-buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button.select-file {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border: solid 1px #dcdcdc;
+    }
+
+    button {
+      margin-left: 15px;
+    }
+  }
+}
+
+.option-buttons {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  button.select-file {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: solid 1px #dcdcdc;
+  }
+
+  button {
+    margin-left: 15px;
+  }
+}
+
+.message-field {
+  height: 100%;
+
+  textarea {
+    height: 212px;
+  }
+
+  .color-red {
+    color: $ceu_de_pipa;
+  }
+}
+
+.send-button {
+  padding-top: 15px;
+  margin-bottom: 30px;
+
+  button {
+    width: 100%;
+    margin-right: 15px;
+  }
+}
+
+.form-field-radio {
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: content-box;
+  }
+}
+
+.content-box {
+  padding-bottom: 90px;
+}
+
+.banner-position {
+  position: relative;
+}
+
+.modal-content {
+  padding: 30px;
+
+  .modal-header {
+    border-bottom: unset;
+    padding: 0;
+
+    h4 {
+      font-size: 20px;
+      font-weight: bold;
+      color: $mergulho;
+    }
+
+    .close {
+      font-size: 15px;
+      padding-top: 24px;
+    }
+  }
+
+  .modal-body {
+    text-align: center;
+    padding: 30px;
+
+    img {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  .modal-footer {
+    text-align: center;
+    display: block;
+    border-top: 2px dashed #f5f5f5;
+    padding: 30px 0 0 0;
+  }
+}
+
+select {
+  background: url(/assets/icons/arrow_down.png) no-repeat right;
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  background-position: right 15px center;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+@media (max-width: 3840px) {
+  .banner {
+    background-image: url('~/assets/images/background-central-de-ajuda-large.jpg');
+  }
+}
+
+@media (max-width: 1920px) {
+  .banner {
+    background-image: url('~/assets/images/background-central-de-ajuda-normal.jpg');
+  }
+}
+
+@media (max-width: 1350px) {
+  .banner {
+    height: 377px;
+    background-image: url('~/assets/images/background-central-de-ajuda-3x.jpg');
+  }
+
+  .banner-text-question {
+    top: 240px;
+  }
+
+  .banner-text-info {
+    top: 275px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .show-on-mobile {
+    display: inline-table;
+  }
+
+  .show-on-desktop {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .page-name {
+    padding-top: 30px;
+  }
+
+  .banner {
+    background-image: url('~/assets/images/background-central-de-ajuda-2x.jpg');
+    height: 335px;
+    margin-bottom: 30px;
+  }
+
+  .fc-container {
+    .content {
+      border: unset;
+      background-color: unset;
+      padding: unset;
+    }
+  }
+
+  .contact {
+    background-color: unset;
+    border: unset;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+
+    .option {
+      button {
+        font-size: 18px;
+      }
+    }
+
+    .option.align-right,
+    .option.align-left {
+      float: unset;
+    }
+  }
+
+  .banner-text {
+    display: none;
+  }
+
+  .dotted-hr {
+    hr {
+      display: none;
+    }
+  }
+
+  .suggested-answer-feedback {
+    margin-top: 40px;
+  }
+
+}
+
+
+@media (min-width: 576px) {
+  .modal-lg {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .banner {
+    height: 218px;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .banner {
+    height: 218px;
+    background-image: url('~/assets/images/background-central-de-ajuda-1x.jpg');
+  }
+
+}

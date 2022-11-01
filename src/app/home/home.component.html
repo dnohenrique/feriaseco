@@ -1,0 +1,80 @@
+<!-- Covid-19 -->
+<div id="alertCovid19" class="content-message message-covid19 display-block" *ngIf="showAlertCovid">
+  <div class="message">
+    <div id="productId1" class="text-alert display-block">
+      <span class="title">Dica para tempos de COVID-19: </span>
+      <span class="text">Reserve quartos com cancelamento grátis. </span>
+      <span class="text">Se seus planos mudarem, você terá um prazo para cancelar a reserva sem multa. </span>
+    </div>
+    <div id="productId2" class="text-alert display-none">
+      <span class="title">Dica para tempos de COVID-19: </span>
+      <span class="text">Antes de adquirir passagens aéreas verifique as restrições de brasileiros para a localidade
+        desejada.</span>
+    </div>
+    <div class="btn-alert">
+      <div class="btn-close">
+        <i class="icon-fechar" (click)="hideAlert()"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmar Email -->
+<div id="alertConfirmarEmail" class="content-message message-confirmar-email display-block" *ngIf="showAlertConfirmarEmail">
+  <div class="message">
+    <div class="text-alert display-block">
+      <span class="text">Você ainda não confirmou seu email. </span>
+      <span class="text">Sem a confirmação de email não será possível fazer uma reserva. </span>
+      <span class="text">Caso não tenha recebido, <strong class="email" (click)="onSendEmail()">clique aqui </strong></span>
+      <span class="text">para reenviarmos o email. </span>
+      <span class="text">Se mesmo assim não tiver recebido, entre em contato via <strong class="email" (click)="onCentralAjuda()">Central de ajuda </strong></span>
+    </div>
+    <div class="btn-alert">
+      <div class="btn-close">
+        <i class="icon-fechar" (click)="hideAlertConfirmarEmail()"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagamento Recusado -->
+<div id="alertPayment" class="content-message message-payment-declined" *ngIf="showAlertDeclinedPayment">
+  <div class="message">
+    <div class="text-alert">
+      <span class="title">O pagamento da sua mensalidade foi recusado :/ </span>
+      <span class="text">Evite o cancelamento da sua conta. </span>
+      <span class="text">Saiba como clicando <a class="payment-declined-link" (click)="goToCardPage()">aqui.</a> </span>
+    </div>
+    <div class="btn-alert">
+      <div class="btn-close">
+        <i class="icon-fechar" (click)="hideAlertPayment()"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="content_max" id="navbar-section">
+    <div class="content_component">
+        <div class="fc-alert fc-alert-success" *ngIf="messageSuccess !== ''">
+          <div [innerHTML]="messageSuccess">
+          </div>
+          <i class="icon-fechar icon-size icon-position close" (click)="messageSuccess = '';"></i>
+        </div>
+        <div class="fc-alert fc-alert-danger" *ngIf="messageError !== ''">
+          <div [innerHTML]="messageError"></div>
+          <i class="icon-fechar icon-size icon-position close" (click)="messageError = '';"></i>
+        </div>
+        <div class="fc-alert fc-alert-warning" *ngIf="messageWarning !== ''">
+          <div [innerHTML]="messageWarning"></div>
+          <i class="icon-fechar icon-size icon-position close" (click)="messageWarning = '';"></i>
+        </div>
+    </div>
+</div>
+<app-navbar [empresaSelecionada]="empresaSelecionada"></app-navbar>
+<div class="content_body content_max {{background}}">
+   <!-- BODY -->
+  <router-outlet (activate)='onActivate($event)'></router-outlet>
+</div>
+<!-- FOOTER -->
+<app-footer></app-footer>

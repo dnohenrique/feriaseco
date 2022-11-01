@@ -1,0 +1,17 @@
+<!-- <app-modal-completar-dados-pessoais (actions)="goActions($event)"
+(visibilityEvent)="onChangeVisibilityModal($event)"
+[visibilityModal]="visibilityModal"></app-modal-completar-dados-pessoais> -->
+
+<div class="content_max">
+    <div class="fc-container">
+        <h1 class="title">Minha Conta</h1>
+        <div class="box-container">
+        <div class="fc-alert fc-alert-warning" *ngIf="!contactOk">
+            <b>Algumas informações essenciais para efetuar reservas ainda não foram preenchidas.</b>
+             Por favor, preencha os dados abaixo para continuar. Desculpe-nos pelo inconveniente.
+        </div>
+
+        <fc-colaborador-minha-conta [cpf]="cpf" [cnpj]="cnpj" (contactSuccessEvent)="setContactSuccessEvent($event)"></fc-colaborador-minha-conta>
+        </div>
+    </div>
+</div>

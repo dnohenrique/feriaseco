@@ -1,0 +1,127 @@
+@import "../../shared/assets/colors.scss";
+
+.modal-header,
+.modal-footer {
+    border: none !important;
+}
+
+.modal-footer {
+    .fc-btn {
+        height: 40px;
+        min-width: unset;
+        font-size: 16px;
+    }
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.icon {
+    width: 100%;
+    color: #f9b508;
+    padding: 15px 10px;
+
+    .icon-img {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        border: 5px solid;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+
+        .icon-trace-one {
+            margin-top: -15px;
+            margin-left: 50px;
+            -webkit-transform: rotate(110deg);
+            -ms-transform: rotate(110deg);
+            transform: rotate(110deg);
+        }
+
+        .icon-trace-two {
+            margin-top: 3px;
+            margin-left: 65px;
+            -webkit-transform: rotate(155deg);
+            -ms-transform: rotate(155deg);
+            transform: rotate(155deg);
+        }
+
+        .icon-trace-three {
+            margin-top: 25px;
+            margin-left: 68px;
+            -webkit-transform: rotate(195deg);
+            -ms-transform: rotate(195deg);
+            transform: rotate(195deg);
+        }
+
+        .icon-trace-one,
+        .icon-trace-two,
+        .icon-trace-three {
+            width: 6px;
+            position: absolute;
+            border: 3px solid;
+            border-radius: 5px;
+            color: #f9b508;
+            background-color: #f9b508;
+        }
+
+        span {
+            font-size: 45px;
+            font-weight: bold;
+        }
+    }
+
+    .icon-text {
+        width: 100%;
+        padding-top: 20px;
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #535252;
+            opacity: 0.8;
+        }
+    }
+
+    .description-text {
+        width: 100%;
+
+        span {
+            font-size: 16px;
+            font-weight: normal;
+            color: #535252;
+            opacity: 0.8;
+        }
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    .icon {
+        .icon-img {
+            width: 70px;
+            height: 70px;
+
+            span {
+                display: ruby-text;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1111px) {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        /* IE10+ CSS styles go here */
+        .icon {
+            .icon-img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+
+@import '../../shared/assets/colors';
+
+.content_max {
+  min-height: max-content;
+  overflow: hidden;
+}
+
+.fc-container {
+  min-height: max-content;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: $mergulho;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.check-monthly-payment {
+  margin-bottom: 30px !important;
+}
+
+@media (max-width: 768px) {
+  .content_max {
+    background-color: #ffffff;
+  }
+
+  .fc-container {
+    margin-top: 14px;
+  }
+}

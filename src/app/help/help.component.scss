@@ -1,0 +1,358 @@
+@import '~src/assets/styles/colors';
+@import '~src/assets/styles/ghost';
+
+.loading-information {
+
+  button {
+    background-color: #f5f5f5;
+    border-bottom: 3px solid white;
+    border-radius: 4px 4px 4px 4px;
+    @include background-gradient;
+    @include animate-ghost-line;
+    width: 100px;
+  }
+
+  .loading-img {
+    width: 70px;
+    height: 51px;
+    background-color: #f5f5f5;
+    @include background-gradient;
+    @include animate-ghost-line;
+  }
+}
+
+.show-on-mobile {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.show-on-desktop {
+  display: block;
+}
+
+.fc-container {
+  width: 100%;
+
+  .content {
+    border: solid 1px #dcdcdc;
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+  }
+}
+
+.page-name {
+  padding-top: 45px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: $mergulho;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 45px;
+}
+
+
+.banner {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 218px;
+  background-position: center;
+  height: 477px;
+  background-image: url('~/assets/images/background-central-de-ajuda-4k.jpg');
+}
+
+.banner-position {
+  position: relative;
+}
+
+.banner-text {
+  position: absolute;
+  right: 0px;
+  margin: 0px;
+  background-color: #00b0b0;
+  padding: 5px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+.banner-text-question {
+  top: 320px;
+}
+
+.banner-text-info {
+  top: 365px;
+}
+
+.section-subjects {
+  margin-bottom: 15px;
+
+  p {
+    margin-bottom: 25px;
+  }
+
+  button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.answer-section {
+  margin-bottom: 30px;
+}
+
+.find-word {
+  max-width: 545px;
+
+  .input-field {
+    position: relative;
+  }
+
+  .find-button {
+    background-image: url('~/assets/icons/zoom.png');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: right;
+    width: 27px;
+    height: 22px;
+    background-color: transparent;
+    position: relative;
+    bottom: 30px;
+    float: right;
+    right: 15px;
+    border: 0px !important;
+  }
+}
+
+.keyword {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.contact {
+  text-align: center;
+  border: solid 1px #dcdcdc;
+  background-color: white;
+  padding: 30px 30px 0 30px;
+  border-radius: 5px;
+
+  .option {
+    margin-bottom: 30px;
+
+    &.align-right {
+      float: right;
+    }
+
+    &.align-left {
+      float: left;
+    }
+
+    button {
+      margin-top: -10px;
+      min-width: 220px;
+    }
+  }
+}
+
+.contact-box {
+  padding-bottom: 90px;
+}
+
+.business-hours {
+  padding-top: 15px;
+  margin-bottom: 0;
+}
+
+
+.tooltip-space {
+  position: relative;
+  font-size: 12px;
+
+  span {
+    font-size: 13px;
+  }
+}
+
+.tooltip-space .tooltiptext {
+  visibility: hidden;
+  text-align: center;
+  border-radius: 6px;
+
+  background-color: white;
+  color: #535252;
+  border: solid 1px #bcbcbc;
+  padding: 10px;
+
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+}
+
+.tooltip-space:hover .tooltiptext {
+  visibility: visible;
+  position: absolute;
+  left: 0;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -15.5px;
+  left: 15px;
+  margin-left: -10px;
+  border-width: 10px;
+  border: solid 1px #bcbcbc;
+  width: 0;
+  height: 0;
+  border: 8px solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.tooltiptext::before {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: 15px;
+  margin-left: -10px;
+  border-width: 10px;
+  border: solid 1px #bcbcbc;
+
+  width: 0;
+  height: 0;
+  border: 8px solid;
+  border-color: transparent transparent #bcbcbc transparent;
+
+}
+
+
+@media (max-width: 3840px) {
+  .banner {
+    background-image: url('~/assets/images/background-central-de-ajuda-large.jpg');
+  }
+}
+
+@media (max-width: 1920px) {
+  .banner {
+    background-image: url('~/assets/images/background-central-de-ajuda-normal.jpg');
+  }
+}
+
+@media (max-width: 1350px) {
+  .banner {
+    height: 377px;
+    background-image: url('~/assets/images/background-central-de-ajuda-3x.jpg');
+  }
+
+  .banner-text {
+    font-size: 20px;
+  }
+
+
+  .banner-text-question {
+    top: 240px;
+  }
+
+  .banner-text-info {
+    top: 275px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .show-on-mobile {
+    display: inline-table;
+  }
+
+  .show-on-desktop {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .page-name {
+    padding-top: 30px;
+  }
+
+  .banner {
+    background-image: url('~/assets/images/background-central-de-ajuda-2x.jpg');
+    height: 335px;
+    margin-bottom: 30px;
+  }
+
+  .fc-container {
+    .content {
+      border: unset;
+      background-color: unset;
+      padding: unset;
+    }
+  }
+
+  .contact {
+    background-color: unset;
+    border: unset;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+
+    .option {
+      max-width: 400px;
+      margin: auto;
+      margin-bottom: 80px;
+
+      button {
+        font-size: 18px;
+      }
+    }
+
+    .option.align-right,
+    .option.align-left {
+      float: unset;
+    }
+  }
+
+  .tooltiptext::after {
+    left: 50%;
+  }
+
+  .tooltiptext::before {
+    left: 50%;
+  }
+
+  .contact-box {
+    padding-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .banner {
+    height: 218px;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .banner {
+    height: 218px;
+    background-image: url('~/assets/images/background-central-de-ajuda-1x.jpg');
+  }
+
+}

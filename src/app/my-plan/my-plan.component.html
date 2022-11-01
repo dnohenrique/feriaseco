@@ -1,0 +1,16 @@
+<div class="content_max">
+  <div class="fc-container">
+
+    <h1 class="title">Meu plano</h1>
+    <div class="box-container">
+      <app-check-monthly-payment></app-check-monthly-payment>
+      <div class="line"></div>
+      <fc-planos-acquired-plan (goUpgradeEmitter)="goToUpgrade($event)"></fc-planos-acquired-plan>
+      <div class="line"></div>
+      <fc-points-recompensas></fc-points-recompensas>
+    </div>
+    <fc-points-acquired-points *ngIf="!somenteContaGratuita" (callBackEvent)="callBackEventPoint($event)"></fc-points-acquired-points>
+    <div class="line"></div>
+    <fc-wallet-history></fc-wallet-history>
+  </div>
+</div>

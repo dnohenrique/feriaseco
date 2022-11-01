@@ -1,0 +1,162 @@
+<div class="fc-container page-name show-on-mobile">
+  <h1>Central de ajuda</h1>
+</div>
+<div class="banner" id="banner-help">
+  <div class="fc-container page-name show-on-desktop">
+    <div class="banner-position">
+      <p class="banner-text banner-text-question">
+        Surgiu um imprevisto?
+      </p>
+      <p class="banner-text banner-text-info">
+        Selecione uma das opções abaixo para te ajudarmos
+      </p>
+    </div>
+  </div>
+</div>
+<div class="fc-container page-name show-on-desktop">
+  <h1>Central de ajuda</h1>
+</div>
+<div class="fc-container content-box" [formGroup]="messageForm">
+  <div class="content">
+    <h2>Envie uma mensagem</h2>
+
+    <div class="row">
+      <div class="col-sm-12 col-lg-6 form-group form-field">
+        <label class="field-description">Assunto</label>
+        <div class="loading-information input" *ngIf="loading"></div>
+        <select class="input-field" (change)="changeSelectedSubject($event.target.value)" formControlName="subject" *ngIf="!loading"
+          id="select-subject">
+          <option value="">-- Nenhum --</option>
+          <option value="{{ subject.title }}" *ngFor="let subject of subjects">{{ subject.title }}</option>
+        </select>
+      </div>
+    </div>
+
+    <label class="field-description" *ngIf="selectedSubject">Dúvida </label>
+
+    <app-answers [subject]="selectedSubject" [clearAnswerFeedback]="clearAnswerFeedback"
+      (answerFeedback)="changeAnswersDidHelp($event)"></app-answers>
+
+    <div class="w-100 d-block dotted-hr">
+      <hr>
+    </div>
+
+    <div class="suggested-answer-feedback" *ngIf="selectedSubject" id="feedback-section">
+      <p><b>Encontrou a sua pergunta?</b></p>
+      <div class="form-field form-field-radio">
+        <label class="fc-input-radio" (click)="changeAnswersDidHelp('true'); clearAnswerFeedback = 'true'">
+          <input type="radio" name="userDocumentType" [value]="1" [disabled]="messageForm.disabled">
+          <span class="fc-checkradio"></span> Sim
+        </label>
+        <label class="fc-input-radio" (click)="changeAnswersDidHelp('false'); clearAnswerFeedback = 'false'">
+          <input type="radio" name="userDocumentType" [value]="2" [disabled]="messageForm.disabled">
+          <span class="fc-checkradio"></span> Não
+        </label>
+      </div>
+    </div>
+
+    <div class="fc-alert fc-alert-success" *ngIf="answersFeedbackHelp === 'true'">
+      <i class="icon-check"></i><b>Que ótimo!</b> Estamos sempre aqui para lhe ajudar. ;D
+    </div>
+
+    <div class="message-box" *ngIf="answersFeedbackHelp === 'false'">
+      <h2 id="title-send-message">Envie-nos sua dúvida</h2>
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <div class="form-group form-field">
+            <label class="field-description">Tipo</label>
+            <select class="input-field" formControlName="type" (change)="messageForm.controls.reason.setValue('');"
+              id="select-type" [class.input-error]="submitted && messageForm.get('type').errors">
+              <option value="">-- Nenhum --</option>
+              <option value="{{ typ.name }}" *ngFor="let typ of types">{{ typ.name }}</option>
+            </select>
+            <div class="error-message" *ngIf="submitted && messageForm.get('type').errors">
+              Selecione um tipo.
+            </div>
+          </div>
+          <div class="form-group form-field" *ngIf="field('type').length > 0">
+            <label class="field-description">Motivo</label>
+            <select class="input-field" formControlName="reason" id="select-reason"
+              [class.input-error]="submitted && !isReasonsValid()">
+              <option value="">-- Nenhum --</option>
+              <option value="{{ rson }}" *ngFor="let rson of getReasonsFromType(field('type'))">
+                {{ rson }}</option>
+            </select>
+            <div class="error-message" *ngIf="submitted && !isReasonsValid()">
+              Selecione um motivo.
+            </div>
+          </div>
+          <!-- Será usado em próximas releases -->
+          <!-- <div class="form-group">
+            <div class="form-field">
+              <label class="field-description">Anexo</label>
+              <div class="file">
+                <input type="file" id="file" data-title="Carregue ou arraste o arquivo CSV" accept=".csv"
+                  (change)="handleFileInput($event.target.files)" #fileSelect>
+                <div class="file-name-box">{{fileToUpload?.name}}</div>
+
+                <div class="option-buttons">
+                  <button class="fc-btn fc-btn-secondary select-file" id="btnSelecionarArquivo"
+                    (click)="fileSelect.click()">Selecione o arquivo</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="col-sm-12 col-lg-6" *ngIf="submitted || isReasonsValid()">
+          <div class="form-group form-field message-field">
+            <label class="field-description">Mensagem</label>
+            <textarea type="text" class="input-field" id="textarea-message-description" formControlName="description"
+              #description [class.input-error]="submitted && messageForm.get('description').errors"></textarea>
+            <p [class.color-red]="description.value.length < 50 || description.value.length > 3000">
+              {{ description.value.length }} caracteres</p>
+            <div class="error-message"
+              *ngIf="submitted && messageForm.get('description').errors && description.value.length < 50">
+              Digite uma mensagem que descreva sua dúvida em no mínimo 50 caracteres.
+            </div>
+            <div class="error-message" *ngIf="messageForm.get('description').errors && description.value.length > 3000">
+              Digite uma mensagem que descreva sua dúvida em até 3000 caracteres.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-end send-button"
+        *ngIf="field('description').length > 49 && field('type').length > 0">
+        <div class="col-sm-12 col-lg-2">
+          <button class="fc-btn fc-btn-success" id="btn-submit-form" (click)="submitMessage()"
+            [disabled]="messageForm.disabled">
+            <span *ngIf="!loading">Enviar</span>
+            <span *ngIf="loading">Enviando</span>
+          </button>
+        </div>
+      </div>
+      <div class="fc-alert fc-alert-danger" *ngIf="!messageForm.disabled && errorOnSubmit">
+        <b>Falha no envio.</b> Atualize a página e tente novamente.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-child-name"
+  (onHidden)="hideChildModal()">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-child-name" class="modal-title pull-left">Mensagem enviada com sucesso!</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+          <i class="icon-fechar"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://static.ferias.co/images/paper-plane.png" alt="avião de papel">
+        <br />
+        Você receberá um retorno em breve.
+      </div>
+      <div class="modal-footer">
+        <button class="fc-btn fc-btn-success" (click)="hideChildModal()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

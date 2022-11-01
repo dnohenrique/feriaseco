@@ -1,0 +1,44 @@
+@import '../../assets/colors.scss';
+
+a {
+    color: $mergulho !important;
+    text-decoration: none;
+}
+
+.payment-message {
+    font-family: Roboto;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+}
+
+.payment-message-title {
+    color: #ffffff;
+    background-color: $ceu_de_pipa;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    i {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+}
+
+.payment-message-body {
+    border-radius: 0px 0px 5px 5px;
+    border: dashed 1.6px $ceu_de_pipa;
+    border-top: none;
+    padding: 30px;
+    line-height: 1.38;
+}
+
+.payment-message-tip {
+    margin-top: 30px;
+}

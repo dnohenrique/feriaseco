@@ -1,0 +1,101 @@
+<div class="content_max">
+  <div class="fc-container">
+    <h2 class="fc-txt-color mergulho plan-title-mobile title"><b>Alterar conta e plano</b></h2>
+    <div class="box-container">
+      <fc-planos-plan-upgrade [planInformation]="planInfo" [submit]="upgradeSubmitted" [name]="name" [email]="email"
+        (goToHelpEmitter)="goToHelp()" (goToUseTermEmitter)="goToUseTermValue($event)" [ehDescontoFolha]="ehDescontoFolha"
+        (showPasswordFieldEmitter)="showPasswordField($event)" (goToSuccessUpgradeEmitter)="goToSuccessUpgrade($event)"
+        (planoNaoOfertadoEmitter)="changePlanoNaoOfertado($event)">
+      </fc-planos-plan-upgrade>
+
+      <div class="fc-content-card" *ngIf="exibeCartao">
+        <div class="box-title-2">Cadastro de cartão de crédito</div>
+        <div class="row-fc fc-alert fc-alert-danger" [hidden]="!msgErrorCard">
+          <b class="face">:(</b> <b>Cartão não permitido.</b>
+        </div>
+        <fc-formulario-pagamento-card-register [submit]="cardRegisterSubmitted" [isLoading]="true"
+        (formSubmitResult)="cardRegisterFeedback($event)" [isDataRegister]="false" [name]="name" [email]="email">
+        </fc-formulario-pagamento-card-register>
+      </div>
+
+      <div class="box-subtitle">Confirme seu Upgrade</div>
+      <p>Gostaria de fazer o upgrade somente na próxima anuidade? <span (click)="openWarnMeModal()" class="link">Confirme
+          aqui.</span></p>
+      <form [formGroup]="upgradeRegisterForm">
+        <div class="form-group form-group-field">
+          <div class="form-field">
+            <div class="checkbox_field">
+              <label for="checkmark">Aceito os novos valores de mensalidades</label>
+              <div class="error-message" *ngIf="validateField('upgradeValues')">
+                É necessário aceitar os novos valores das mensalidades
+              </div>
+              <div (click)="changeCheckNewValuesTerm()">
+                <input type="checkbox" id="checkmark" [attr.checked]="upgradeRegisterForm.controls.upgradeValues.value"
+                  formControlName="upgradeValues">
+                <span class="checkmark"></span>
+              </div>
+            </div>
+            <div class="checkbox_field">
+              <label for="useTerm">Aceito <span class="link" (click)="goToUseTerm()">Termos de uso e
+                  privacidade</span></label>
+              <div class="error-message" *ngIf="validateField('useTerm')">
+                É necessário aceitar os Termos de uso e privacidade
+              </div>
+              <div (click)="changeCheckUseTerm()">
+                <input id="useTerm" type="checkbox" [attr.checked]="upgradeRegisterForm.controls.useTerm.value"
+                  formControlName="useTerm">
+                <span class="checkmark"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form *ngIf="showPassword" [formGroup]="upgradePasswordForm" autocomplete="off">
+        <div class="form-group form-group-field">
+          <div class="password-input-field">
+            <div>
+              <div class="password-input-box">
+                <label class="field-description"><b>Senha</b></label>
+                <input type="password" class="input-field password-input" 
+                (keyup)="validPassword = null;"
+                formControlName="password" autocomplete="off">
+              </div>
+              <div class="error-message" *ngIf="validateField('password')">
+                Senha inválida
+              </div>
+            </div>
+            <button (click)="validateSubmit()" [disabled]="disableUpgradeButton"
+              class="fc-btn fc-btn-success btn-confirm-change">
+              Confirmar a alteração de conta/plano
+            </button>
+          </div>
+          <div class="error-message upgrade-error-message" *ngIf="upgradeError">
+            <b>:( Ocorreu um erro ao confirmar seu upgrade.</b> Tente novamente em alguns instantes
+            ou <span class="link" (click)="goToHelp()">entre em contato conosco</span>.
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<fc-planos-modal-warn-me [visibility]="warnMeModalVisibility" (visibilityEvent)="closeWarnMeModal()"
+  (warnMeEvent)="registerWarnMe()">
+</fc-planos-modal-warn-me>
+
+<!-- *ngIf="loading" -->
+<div class="loading-animation" *ngIf="loading">
+  <img src="https://static.ferias.co/images/gif/loading_amarelo.gif" alt="carregando">
+</div>
+
+<!-- <ngx-spinner bdColor="rgba(0,0,0,.4)" size="medium" color="#00b0b0"  [fullScreen]="true">
+  <div class="loading">
+    <img src="https://static.ferias.co/images/gif/loading_amarelo.gif" alt="Carregando">
+
+    <div style="color: #00B0B0; font-weight: bold; padding-top: 20px;">
+      Processando...
+    </div>
+  </div>
+</ngx-spinner> -->
+

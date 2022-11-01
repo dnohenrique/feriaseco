@@ -1,0 +1,82 @@
+<div class="content_max">
+  <div class="fc-container">
+    <div class="content-message">
+      <div class="content-grid" *ngIf="entityOrder.productId === 1">
+        <div class="col-message">
+          <div class="msg-content">
+            <div class="msg-header" [ngClass]="{'processing': entityOrder.statusId === proccesingId}">
+              <div class="msg-title">
+                {{entityOrder.title}}
+              </div>
+              <div class="msg-subtitle">
+                {{entityOrder.subTitle}}
+              </div>
+            </div>
+            <div class="msg-img-sino" [ngClass]="{'processing': entityOrder.statusId === proccesingId}"></div>
+            <div class="msg-info" [ngClass]="{'processing': entityOrder.statusId === proccesingId}">
+              <div classs="msg-text-one"><b>Número do pedido: </b> {{entityOrder.orderId}}
+                <div classs="msg-text-one">
+                  {{entityOrder.msgDetailReservation}} <span class="msg-reservation"
+                    [routerLink]="['/reservas/minhas-reservas', entityOrder.productId]">“Minhas
+                    Reservas”</span>.
+                </div>
+                <div class="msg-text-two">
+                  Enviaremos um email de confirmação com seu voucher para {{entityOrder.email}}
+                </div>
+                <div class="msg-text-tree" [hidden]="entityOrder.statusId === proccesingId">
+                  Desejamos uma ótima viagem à todos!
+                </div>
+                <div class="msg-text-four" [hidden]="entityOrder.statusId === proccesingId">
+                  Divirtam-se :)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Coluna Detalhe do Hotel -->
+        <div class="col-product">
+          <fc-booking-product [entity]="entityResult"></fc-booking-product>
+        </div>
+      </div>
+
+      <div class="content-grid aereo" *ngIf="entityOrder.productId === 2">
+        <div class="col-message">
+          <div class="msg-content">
+            <div class="msg-header" [ngClass]="{'processing': entityOrder.statusId === proccesingId}">
+              <div class="msg-title">
+                {{entityOrder.title}}
+              </div>
+              <div class="msg-subtitle">
+                {{entityOrder.subTitle}}
+              </div>
+            </div>
+            <div class="msg-img-aereo" [ngClass]="{'processing': entityOrder.statusId === proccesingId}"></div>
+            <div class="msg-info" [ngClass]="{'processing': entityOrder.statusId === proccesingId}">
+              <div classs="msg-text-one">
+                <b>Número do pedido: </b> {{entityOrder.orderId}}
+                <div classs="msg-text-one">
+                  {{entityOrder.msgDetailReservation}} <span class="msg-reservation"
+                    [routerLink]="['/reservas/minhas-reservas', entityOrder.productId]">“Minhas
+                    Reservas”</span>.
+                </div>
+                <div class="msg-text-two">
+                  Enviaremos um email de confirmação com seu voucher para {{entityOrder.email}}
+                </div>
+                <div class="msg-text-tree" [hidden]="entityOrder.statusId === proccesingId">
+                  Desejamos uma ótima viagem à todos!</div>
+                <div class="msg-text-four" [hidden]="entityOrder.statusId === proccesingId">
+                  Divirtam-se :)
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Coluna Detalhe do Voo -->
+        <div class="col-product">
+          <fc-booking-air-product [entity]="entityResult.air"></fc-booking-air-product>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

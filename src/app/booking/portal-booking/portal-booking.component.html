@@ -1,0 +1,15 @@
+<div class="content_max">
+  <div class="fc-container" *ngIf="productId == 1">
+    <fc-booking-reservation (errorEvent)="error($event)" (callBackBooking)="callBackBooking($event)"
+      (centralAjudaEvent)="goCentralAjuda()"
+      [collaboratorName]="name" [collaboratorEmail]="email" (callbackDetail)="callbackGetDetail($event)">
+    </fc-booking-reservation>
+  </div>
+
+  <div class="fc-container" *ngIf="productId == 2">
+    <fc-booking-air-reservation (errorEvent)="error($event)" (callBackBooking)="callBackBooking($event)"
+      (centralAjudaEvent)="goCentralAjuda()"
+      (callbackDetail)="callbackGetDetail($event)">
+    </fc-booking-air-reservation>
+  </div>
+</div>

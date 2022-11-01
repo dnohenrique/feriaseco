@@ -1,0 +1,86 @@
+<div class="content_max" [ngClass]="{'focus': isDestinationFocus || isRoomsFocus || isCheckinFocus || isCheckoutFocus ||
+isDestinationAirFocus || isPaxAirFocus || isCheckinAirFocus || isCheckoutAirFocus}">
+  <div [ngClass]="{'card-img-hotel': productId == 1, 'card-img-air': productId == 2}">
+    <div class="card-img-gradient">
+      <div class="fc-container">
+        <div class="content_component">
+          <div class="content-filter">
+            <div class="conteudo mala" *ngIf="loading">
+              <div class="ico">
+                <i class="icon-luggage"></i>
+              </div>
+              <div class="title">
+                <span><b>{{setPlanDescription()}}</b> {{typePlan !== 'Plano ContaGratuita'? '- ' + typePlan : 'Conta
+                  Gratuita'}}</span>
+              </div>
+            </div>
+            <!-- HEADER MOBILE -->
+            <div class="header-mobile welcome">
+              <div class="text-mobile" *ngIf="loading">
+                <div class="text-welcome"><b>Olá {{userFirstName}}</b>, vamos viajar?</div>
+                <div class="text-day" *ngIf="availablePointsFormat === '0'">
+                  {{availableDays}} diária<span *ngIf="availableDays !== 1">s</span>
+                  disponíveis</div>
+                <div class="text-day" *ngIf="availablePointsFormat !== '0'">
+                  {{availableDays}} diária<span *ngIf="availableDays !== 1">s</span>
+                  + {{availablePointsFormat}} ponto<span *ngIf="availablePoints !== 1">s</span>
+                </div>
+              </div>
+              <div class="imgE"><i class="icon-e_ferias"></i></div>
+            </div>
+            <div class="filter-booking">
+              <button type="button" class="fc-btn hotel"
+                [ngClass]="{'fc-btn-success': productId == 1, 'fc-btn-light': productId == 2}"
+                (click)="updateProduct(1)">
+                Hospedagens
+              </button>
+              <button type="button" class="fc-btn fc-btn-light air"
+                [ngClass]="{'fc-btn-success': productId == 2, 'fc-btn-light': productId == 1}"
+                (click)="updateProduct(2)">
+                Voos
+              </button>
+            </div>
+            <!-- Biblioteca Availability -->
+            <div class="filter">
+              <owl-carousel #owlElement [options]="productOptions" [items]="[1, 2]"
+                [carouselClasses]="['owl-theme', 'sliding']"
+                [ngClass]="{'owl-fc-overflow': changeProduct, 'hotel': productId == 1}">
+                <div class="item">
+                  <fc-availability-filter-search (changeDestinationFocus)="changeDestinationFocus($event)"
+                    (changeRoomsFocus)="changeRoomsFocus($event)" (changeCheckinFocus)="changeCheckinFocus($event)"
+                    (changeCheckoutFocus)="changeCheckoutFocus($event)"></fc-availability-filter-search>
+                </div>
+                <div class="item air">
+                  <fc-availability-air-filter-search (changeDestinationFocus)="changeDestinationAirFocus($event)"
+                    (changeRoomsFocus)="changePaxAirFocus($event)" (changeCheckinFocus)="changeCheckinAirFocus($event)"
+                    (changeCheckoutFocus)="changeCheckoutAirFocus($event)">
+                  </fc-availability-air-filter-search>
+                </div>
+              </owl-carousel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fc-container" [ngClass]="{'focus': isDestinationFocus || isRoomsFocus || isCheckinFocus || isCheckoutFocus||
+  isDestinationAirFocus || isPaxAirFocus || isCheckinAirFocus || isCheckoutAirFocus}" *ngIf="loading">
+  <section class="section-indique-ganhe" *ngIf="showMgm">
+    <div class="banner" [ngClass]="isBlackFriday ? 'banner-image-black-friday' :'banner-image'"
+      (click)="goToIndiqueGanhe()"></div>
+  </section>
+
+  <section class="section-footer" [ngClass]="{'air-footer': productId == 2}">
+    <div class="card-body-bottom">
+      <fc-recommend-result *ngIf="isRecommend" [typePlan]="typePlan" (callBackResult)="callBackResult($event)">
+      </fc-recommend-result>
+    </div>
+  </section>
+</div>
+
+
+<ng-template #pointsModal>
+  <app-points-message-available [points]="points" [modalRef]="modalRefPoints" *ngIf="notificationLoading">
+  </app-points-message-available>
+</ng-template>
